@@ -1,0 +1,11 @@
+{
+  "name": "thenativeweb",
+  "owner": { "name": "the native web GmbH" },
+  "plugins": [
+    {
+      "name": "esdb",
+      "source": "./plugins/esdb",
+      "description": "Interact with EventSourcingDB using its HTTP API"
+    }
+  ]
+}

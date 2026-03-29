@@ -1,0 +1,9 @@
+{
+  "name": "esdb",
+  "description": "Claude Code plugin for interacting with EventSourcingDB via its HTTP API.",
+  "version": "1.0.0",
+  "author": { "name": "the native web GmbH" },
+  "homepage": "https://www.eventsourcingdb.io",
+  "repository": "https://github.com/thenativeweb/claude-plugins",
+  "license": "MIT"
+}
