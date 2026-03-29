@@ -1,6 +1,6 @@
 # claude-plugins
 
-Claude Code plugins by [the native web](https://www.thenativeweb.io).
+Claude Code plugins by [the native web GmbH](https://www.thenativeweb.io).
 
 ## Available Plugins
 
