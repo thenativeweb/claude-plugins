@@ -28,5 +28,5 @@ curl -s --no-buffer -X POST \
 NDJSON stream with one line per event type:
 
 ```json
-{"type":"eventType","payload":{"eventType":"io.example.book-acquired","isPhantom":false,"schema":{...}}}
+{"type":"eventType","payload":{"eventType":"io.eventsourcingdb.library.book-acquired","isPhantom":false,"schema":{...}}}
 ```

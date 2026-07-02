@@ -16,7 +16,7 @@ echo "ESDB_EVENT_TYPE_PREFIX: ${ESDB_EVENT_TYPE_PREFIX:-(not set)}"
 
 ### Event Source and Type Prefix
 
-Skills that construct events or event types (e.g., writing events, registering schemas) need a consistent `source` and a common reverse-domain prefix for event types, so that all events in a session share a uniform format (e.g., source `https://library.example.io`, prefix `io.example.library`).
+Skills that construct events or event types (e.g., writing events, registering schemas) need a consistent `source` and a common reverse-domain prefix for event types, so that all events in a session share a uniform format (e.g., source `https://library.eventsourcingdb.io`, prefix `io.eventsourcingdb.library`).
 
 - Use `ESDB_SOURCE` and `ESDB_EVENT_TYPE_PREFIX` if set.
 - Otherwise, the first time either value is needed in a session, use AskUserQuestion to ask the user for both values.

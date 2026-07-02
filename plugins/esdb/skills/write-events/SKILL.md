@@ -78,7 +78,7 @@ curl -s -i -X POST \
       {
         \"source\": \"https://example.com\",
         \"subject\": \"/books/42\",
-        \"type\": \"io.example.book-acquired\",
+        \"type\": \"io.eventsourcingdb.library.book-acquired\",
         \"data\": {
           \"title\": \"2001 - A Space Odyssey\",
           \"author\": \"Arthur C. Clarke\"
