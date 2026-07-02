@@ -1,24 +1,18 @@
 ---
 name: register-event-schema
 description: Register a JSON Schema for an event type on an EventSourcingDB instance. Use when the user wants to add validation, define a schema, or enforce structure for an event type.
-allowed-tools: Bash, AskUserQuestion
+allowed-tools: Bash, Read, AskUserQuestion
 ---
 
 # Register Event Schema
 
 Register a JSON Schema for an event type on an EventSourcingDB instance. Once registered, all incoming events of that type are validated against the schema.
 
-## Configuration
+## Shared Instructions
 
-Read configuration from environment variables:
+First read `${CLAUDE_PLUGIN_ROOT}/shared/common.md`. It explains how to determine the base URL and API token, how to handle NDJSON responses, and which conventions apply. Follow it throughout this skill.
 
-```bash
-echo "ESDB_URL: ${ESDB_URL:-http://localhost:3000}"
-echo "ESDB_API_TOKEN: ${ESDB_API_TOKEN:-(not set)}"
-```
-
-- Use `ESDB_URL` if set, otherwise default to `http://localhost:3000`.
-- If `ESDB_API_TOKEN` is not set, use AskUserQuestion to ask the user for the API token.
+Also read `${CLAUDE_PLUGIN_ROOT}/shared/cloudevents.md`. It explains how event types are validated and which constraints apply to the `data` field that the schema describes.
 
 ## Request
 
@@ -72,7 +66,3 @@ curl -s -i -X POST \
 JSON in CloudEvents format on success.
 
 Schemas cannot be modified or removed once registered. Returns `409 Conflict` if a schema already exists for the event type.
-
-## Conventions
-
-- Event types use reverse domain notation (e.g., `io.eventsourcingdb.library.book-acquired`).

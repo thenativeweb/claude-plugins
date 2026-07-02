@@ -1,24 +1,16 @@
 ---
 name: verify-api-token
 description: Verify an API token against an EventSourcingDB instance. Use when the user wants to check if their API token is valid.
-allowed-tools: Bash, AskUserQuestion
+allowed-tools: Bash, Read, AskUserQuestion
 ---
 
 # Verify API Token
 
 Verify that an API token is valid for an EventSourcingDB instance.
 
-## Configuration
+## Shared Instructions
 
-Read configuration from environment variables:
-
-```bash
-echo "ESDB_URL: ${ESDB_URL:-http://localhost:3000}"
-echo "ESDB_API_TOKEN: ${ESDB_API_TOKEN:-(not set)}"
-```
-
-- Use `ESDB_URL` if set, otherwise default to `http://localhost:3000`.
-- If `ESDB_API_TOKEN` is not set, use AskUserQuestion to ask the user for the API token.
+First read `${CLAUDE_PLUGIN_ROOT}/shared/common.md`. It explains how to determine the base URL and API token, how to handle NDJSON responses, and which conventions apply. Follow it throughout this skill.
 
 ## Request
 

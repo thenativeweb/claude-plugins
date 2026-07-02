@@ -34,10 +34,23 @@ Set the following environment variables:
 
 - `ESDB_URL` – Base URL of your EventSourcingDB instance (default: `http://localhost:3000`)
 - `ESDB_API_TOKEN` – API token for authentication (you will be asked if not set)
+- `ESDB_SOURCE` – Source URI to use when writing events (optional; you will be asked once per session if not set)
+- `ESDB_EVENT_TYPE_PREFIX` – Reverse domain prefix for event types, e.g. `io.example.library` (optional; you will be asked once per session if not set)
+
+### Development Instance
+
+To try things out without setting up a server, start a throwaway instance in development mode (requires Docker):
+
+```shell
+/esdb:start-server
+```
+
+This runs EventSourcingDB with temporary data storage, plain HTTP on port 3000, the built-in web UI, and the API token `secret`. All data is deleted when the instance is stopped.
 
 ### Skills
 
 ```shell
+/esdb:start-server
 /esdb:ping
 /esdb:verify-api-token
 /esdb:write-events
