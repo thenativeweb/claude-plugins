@@ -12,6 +12,8 @@ Observe events in real time from an EventSourcingDB instance. This opens a long-
 
 First read `${CLAUDE_PLUGIN_ROOT}/shared/common.md`. It explains how to determine the base URL and API token, how to handle NDJSON responses, and which conventions apply. Follow it throughout this skill.
 
+Also read `${CLAUDE_PLUGIN_ROOT}/shared/cloudevents.md`. It explains how returned events are structured, including the EventSourcingDB-specific metadata fields.
+
 ## Request
 
 This endpoint returns a long-lived NDJSON stream. Always use `--max-time` to ensure the connection terminates (default: 30 seconds):

@@ -12,6 +12,8 @@ Read events for a subject from an EventSourcingDB instance.
 
 First read `${CLAUDE_PLUGIN_ROOT}/shared/common.md`. It explains how to determine the base URL and API token, how to handle NDJSON responses, and which conventions apply. Follow it throughout this skill.
 
+Also read `${CLAUDE_PLUGIN_ROOT}/shared/cloudevents.md`. It explains how returned events are structured, including the EventSourcingDB-specific metadata fields.
+
 ## Request
 
 This endpoint returns NDJSON:

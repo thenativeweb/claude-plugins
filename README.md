@@ -34,6 +34,8 @@ Set the following environment variables:
 
 - `ESDB_URL` – Base URL of your EventSourcingDB instance (default: `http://localhost:3000`)
 - `ESDB_API_TOKEN` – API token for authentication (you will be asked if not set)
+- `ESDB_SOURCE` – Source URI to use when writing events (optional; you will be asked once per session if not set)
+- `ESDB_EVENT_TYPE_PREFIX` – Reverse domain prefix for event types, e.g. `io.example.library` (optional; you will be asked once per session if not set)
 
 ### Development Instance
 
