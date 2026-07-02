@@ -1,20 +1,16 @@
 ---
 name: ping
 description: Ping an EventSourcingDB instance to check if it is reachable. Use when the user wants to verify connectivity or check if EventSourcingDB is running.
-allowed-tools: Bash, AskUserQuestion
+allowed-tools: Bash, Read, AskUserQuestion
 ---
 
 # Ping
 
 Check if an EventSourcingDB instance is reachable.
 
-## Configuration
+## Shared Instructions
 
-Read the base URL from the environment variable `ESDB_URL`. If it is not set, default to `http://localhost:3000`.
-
-```bash
-echo "ESDB_URL: ${ESDB_URL:-http://localhost:3000}"
-```
+First read `${CLAUDE_PLUGIN_ROOT}/shared/common.md`. It explains how to determine the base URL, how to handle NDJSON responses, and which conventions apply. Follow it throughout this skill.
 
 ## Request
 

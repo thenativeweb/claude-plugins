@@ -1,28 +1,20 @@
 ---
 name: observe-events
 description: Observe events in real time from an EventSourcingDB instance. Use when the user wants to watch, monitor, or stream live events as they are written.
-allowed-tools: Bash, AskUserQuestion
+allowed-tools: Bash, Read, AskUserQuestion
 ---
 
 # Observe Events
 
 Observe events in real time from an EventSourcingDB instance. This opens a long-lived streaming connection.
 
-## Configuration
+## Shared Instructions
 
-Read configuration from environment variables:
-
-```bash
-echo "ESDB_URL: ${ESDB_URL:-http://localhost:3000}"
-echo "ESDB_API_TOKEN: ${ESDB_API_TOKEN:-(not set)}"
-```
-
-- Use `ESDB_URL` if set, otherwise default to `http://localhost:3000`.
-- If `ESDB_API_TOKEN` is not set, use AskUserQuestion to ask the user for the API token.
+First read `${CLAUDE_PLUGIN_ROOT}/shared/common.md`. It explains how to determine the base URL and API token, how to handle NDJSON responses, and which conventions apply. Follow it throughout this skill.
 
 ## Request
 
-This endpoint returns a long-lived NDJSON stream. Always use `--max-time` to ensure the connection terminates (default: 30 seconds). Use `--no-buffer` and filter out heartbeats:
+This endpoint returns a long-lived NDJSON stream. Always use `--max-time` to ensure the connection terminates (default: 30 seconds):
 
 ```bash
 curl -s --no-buffer --max-time 30 -X POST \
@@ -84,10 +76,3 @@ NDJSON stream with one line per event:
 ```json
 {"type":"event","payload":{...}}
 ```
-
-Heartbeats (`{"type":"heartbeat","payload":{}}`) are sent periodically and are filtered out by the `grep -v` pattern.
-
-## Conventions
-
-- Subjects always start with `/` (e.g., `/books/42`).
-- Event IDs and bound IDs are strings (e.g., `"42"`).
