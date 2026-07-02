@@ -10,9 +10,9 @@ EventSourcingDB stores events in the CloudEvents 1.0 format. The fields fall int
 
 ## Validation Rules
 
-- **`source`** must be a valid URI reference (e.g., `https://library.example.io` or `tag:example.io,2025:library`). Arbitrary strings like `my-app` are rejected.
+- **`source`** must be a valid URI reference (e.g., `https://library.eventsourcingdb.io` or `tag:eventsourcingdb.io,2025:library`). Arbitrary strings like `my-app` are rejected.
 - **`subject`** must be a path starting with `/`; segments may only contain `[0-9A-Za-z_-]` (e.g., `/books/42`). Spaces or special characters are rejected.
-- **`type`** must use reverse domain notation with at least three dot-separated segments, the first segment being at least two characters long (e.g., `io.example.book-acquired`).
+- **`type`** must use reverse domain notation with at least three dot-separated segments, the first segment being at least two characters long (e.g., `io.eventsourcingdb.library.book-acquired`).
 - **`data`** must be a JSON object. `null`, arrays, or scalars at the top level are rejected; an empty object `{}` is allowed.
 
 ## Example Event (as returned when reading)
@@ -21,9 +21,9 @@ EventSourcingDB stores events in the CloudEvents 1.0 format. The fields fall int
 {
   "specversion": "1.0",
   "id": "0",
-  "source": "https://library.example.io",
+  "source": "https://library.eventsourcingdb.io",
   "subject": "/books/42",
-  "type": "io.example.book-acquired",
+  "type": "io.eventsourcingdb.library.book-acquired",
   "time": "2025-07-02T14:30:45.123456789Z",
   "datacontenttype": "application/json",
   "data": {

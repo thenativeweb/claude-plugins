@@ -47,7 +47,7 @@ curl -s -i -X POST \
   -H "authorization: Bearer ${ESDB_API_TOKEN}" \
   -H "content-type: application/json" \
   -d "{
-    \"eventType\": \"io.example.book-acquired\",
+    \"eventType\": \"io.eventsourcingdb.library.book-acquired\",
     \"schema\": {
       \"type\": \"object\",
       \"properties\": {

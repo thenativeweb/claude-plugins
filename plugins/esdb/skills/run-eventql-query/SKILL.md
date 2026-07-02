@@ -49,9 +49,9 @@ curl -s --no-buffer -X POST \
 ## Common EventQL Patterns
 
 - All events: `FROM e IN events PROJECT INTO e`
-- Filter by type: `FROM e IN events WHERE e.type == "io.example.book-acquired" PROJECT INTO e`
+- Filter by type: `FROM e IN events WHERE e.type == "io.eventsourcingdb.library.book-acquired" PROJECT INTO e`
 - Filter by subject: `FROM e IN events WHERE e.subject == "/books/42" PROJECT INTO e`
-- Count: `FROM e IN events WHERE e.type == "io.example.book-borrowed" PROJECT INTO { total: COUNT() }`
+- Count: `FROM e IN events WHERE e.type == "io.eventsourcingdb.library.book-borrowed" PROJECT INTO { total: COUNT() }`
 - Group by type: `FROM e IN events GROUP BY e.type PROJECT INTO { type: UNIQUE(e.type), count: COUNT() }`
 - Latest N events: `FROM e IN events ORDER BY e.time DESC TOP 10 PROJECT INTO e`
 
