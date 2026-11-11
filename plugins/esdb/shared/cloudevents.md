@@ -31,7 +31,7 @@ EventSourcingDB stores events in the CloudEvents 1.0 format. The fields fall int
     "author": "Arthur C. Clarke"
   },
   "predecessorhash": "0000000000000000000000000000000000000000000000000000000000000000",
-  "hash": "…64 hex characters…",
+  "hash": "esdb:hash:v2:…64 hex characters…",
   "signature": null,
   "traceparent": null,
   "tracestate": null
@@ -39,3 +39,5 @@ EventSourcingDB stores events in the CloudEvents 1.0 format. The fields fall int
 ```
 
 A `predecessorhash` of all zeros marks the very first event of the store.
+
+Since EventSourcingDB 1.3, the `hash` of a new event names its version, as in `esdb:hash:v2:` followed by 64 hexadecimal characters. Events written before 1.3 keep a hash of version 1, which is the 64 hexadecimal characters without a prefix.
